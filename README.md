@@ -1,5 +1,5 @@
 # 📌 Guía de Uso de Proxmark3 (AliExpress) en Windows
-
+https://github.com/ccyl13/Proxmark3/blob/main/proxmark3.jpeg?raw=true
 ## 📜 Índice
 1. [Requisitos Previos](#requisitos-previos)
 2. [Conexión del Proxmark3](#conexión-del-proxmark3)
@@ -27,7 +27,7 @@ Antes de comenzar, asegúrate de tener lo siguiente:
 1. Conecta el **Proxmark3** a un puerto USB del ordenador.
 2. Abre el **Administrador de dispositivos** y busca el puerto COM asignado (ejemplo: `COM5`).
 
-![Detección del COM](ruta-a-imagen)
+![Detección del COM](https://github.com/ccyl13/Proxmark3/blob/main/deteccion%20del%20com.png?raw=true)
 
 ---
 
@@ -36,7 +36,7 @@ Antes de comenzar, asegúrate de tener lo siguiente:
    - [ProxSpace en GitHub](https://github.com/Gator96100/ProxSpace/releases)
 2. Extrae el contenido del archivo en `C:\` (debe quedar como `C:\ProxSpace`).
 
-![Archivos extraídos](ruta-a-imagen)
+![Archivos extraídos](https://github.com/ccyl13/Proxmark3/blob/main/extraer%20carpeta.png?raw=true)
 
 3. Abre `runme64.bat` desde la carpeta `C:\ProxSpace`.
 
@@ -48,14 +48,14 @@ Antes de comenzar, asegúrate de tener lo siguiente:
    git clone https://github.com/RfidResearchGroup/proxmark3.git
    ```
 
-![Clonación del repositorio](ruta-a-imagen)
+![Clonación del repositorio](https://github.com/ccyl13/Proxmark3/blob/main/comando%201.png?raw=true)
 
 2. Accede a la carpeta:
    ```sh
    cd proxmark3
    ```
 
-![Acceso a la carpeta proxmark3](ruta-a-imagen)
+![Acceso y configuración](https://github.com/ccyl13/Proxmark3/blob/main/comando%202.png?raw=true)
 
 3. Copia el archivo de configuración de la plataforma:
    ```sh
@@ -65,17 +65,20 @@ Antes de comenzar, asegúrate de tener lo siguiente:
    ```sh
    notepad Makefile.platform
    ```
-   - Descomenta `PLATFORM=PM3GENERIC`
-   - Comenta `PLATFORM=PM3RDV4`
+   - **Debes cambiar:**
+     - **Comentar** `PLATFORM=PM3RDV4`
+     - **Descomentar** `PLATFORM=PM3GENERIC`
 
-![Edición de Makefile.platform](ruta-a-imagen)
+![Antes del cambio de plataforma](https://github.com/ccyl13/Proxmark3/blob/main/1.png?raw=true)
+
+![Después del cambio de plataforma](https://github.com/ccyl13/Proxmark3/blob/main/2.png?raw=true)
 
 5. Compila el firmware:
    ```sh
    make clean && make -j8 all
    ```
 
-![Compilación del firmware](ruta-a-imagen)
+![Compilación del firmware](https://github.com/ccyl13/Proxmark3/blob/main/comando%20help.png?raw=true)
 
 ---
 
@@ -85,15 +88,16 @@ Antes de comenzar, asegúrate de tener lo siguiente:
    ./pm3-flash-bootrom
    ```
 
-![Flasheo Bootrom](ruta-a-imagen)
+![Flasheo Bootrom](https://github.com/ccyl13/Proxmark3/blob/main/flasheo.png?raw=true)
 
-2. Flashear el **Firmware completo**:
+2. **IMPORTANTE:** Después del primer flasheo, el número de puerto COM puede cambiar. Para comprobarlo, revisa el **Administrador de dispositivos** y localiza el nuevo puerto COM. Una vez identificado, flashea nuevamente el firmware con el nuevo COM asignado.
+
+![Cambio de COM y reintento](https://github.com/ccyl13/Proxmark3/blob/main/cambia%20de%20com%20y%20se%20vuelve%20a%20flashear.png?raw=true)
+
+3. Flashear el **Firmware completo**:
    ```sh
    ./pm3-flash-fullimage -p COM5
    ```
-
-![Flasheo Fullimage](ruta-a-imagen)
-
 ---
 
 ## 🔹 6. Uso del Cliente Proxmark3
@@ -102,54 +106,33 @@ Antes de comenzar, asegúrate de tener lo siguiente:
    ./pm3
    ```
 
-![Inicio del cliente Proxmark3](ruta-a-imagen)
+![Inicio del cliente Proxmark3](https://github.com/ccyl13/Proxmark3/blob/main/iniciamos%20el%20cliente.png?raw=true)
 
 2. Para ver los comandos disponibles:
    ```sh
    help
    ```
 
-![Lista de comandos](ruta-a-imagen)
-
----
-
-## 🔹 7. Comandos Básicos
-| Comando | Descripción |
-|---------|------------|
-| `lf` | Modo baja frecuencia |
-| `hf` | Modo alta frecuencia |
-| `auto` | Escaneo automático de tarjeta |
-| `hf mf autopwn` | Ataque a tarjetas Mifare 1K |
-| `hf mf cload -f <archivo>` | Carga de datos a una nueva tarjeta |
+![Lista de comandos](https://github.com/ccyl13/Proxmark3/blob/main/comando%20help.png?raw=true)
 
 ---
 
 ## 🔹 8. Ataques y Clonación de Tarjetas
-### 🔸 Escaneo de tarjeta
-Para detectar el tipo de tarjeta presente en el lector:
-```sh
-auto
-```
-
-![Escaneo de tarjeta](ruta-a-imagen)
-
-### 🔸 Ataque y obtención de claves
-Para atacar una tarjeta Mifare 1K sin protecciones avanzadas:
+📌 **Ejecutar ataque a una tarjeta Mifare 1K:**
 ```sh
 hf mf autopwn
 ```
 
-![Ataque hf mf autopwn](ruta-a-imagen)
+![Ataque hf mf autopwn](https://github.com/ccyl13/Proxmark3/blob/main/ataque.png?raw=true)
 
-### 🔸 Clonación de tarjeta
-1. Copiar los datos obtenidos:
-   ```sh
-   hf mf cload -f <archivo-dump>
-   ```
-2. Colocar la nueva tarjeta en el lector y ejecutar el comando.
+📌 **Resultados del ataque:**
 
-![Clonación de tarjeta](ruta-a-imagen)
+![Ejecución de autopwn](https://github.com/ccyl13/Proxmark3/blob/main/ataque2.png?raw=true)
 
+📌 **Clonación de tarjeta:**
+```sh
+hf mf cload -f <archivo-dump>
+```
 ---
 
 ## 🔹 9. Conclusión
@@ -158,3 +141,5 @@ hf mf autopwn
 
 Para más información, revisa la documentación oficial:
 - [Wiki de Proxmark3](https://github.com/RfidResearchGroup/proxmark3/wiki)
+  https://github.com/ccyl13/Proxmark3/blob/main/tarjeta%20CUID.jpeg?raw=true
+  https://github.com/ccyl13/Proxmark3/blob/main/RFID.jpeg?raw=true
