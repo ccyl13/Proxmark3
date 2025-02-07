@@ -1,5 +1,7 @@
 # 📌 Guía de Uso de Proxmark3 (AliExpress) en Windows
-https://github.com/ccyl13/Proxmark3/blob/main/proxmark3.jpeg?raw=true
+
+![Proxmark3](https://github.com/ccyl13/Proxmark3/blob/main/proxmark3.jpeg?raw=true)
+
 ## 📜 Índice
 1. [Requisitos Previos](#requisitos-previos)
 2. [Conexión del Proxmark3](#conexión-del-proxmark3)
@@ -141,5 +143,6 @@ hf mf cload -f <archivo-dump>
 
 Para más información, revisa la documentación oficial:
 - [Wiki de Proxmark3](https://github.com/RfidResearchGroup/proxmark3/wiki)
-  https://github.com/ccyl13/Proxmark3/blob/main/tarjeta%20CUID.jpeg?raw=true
-  https://github.com/ccyl13/Proxmark3/blob/main/RFID.jpeg?raw=true
+![CUID CARD](https://github.com/ccyl13/Proxmark3/blob/main/tarjeta%20CUID.jpeg?raw=true)
+![RFID](https://github.com/ccyl13/Proxmark3/blob/main/RFID.jpeg?raw=true)
+
