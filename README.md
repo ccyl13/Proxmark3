@@ -146,3 +146,99 @@ Para más información, revisa la documentación oficial:
 ![CUID CARD](https://github.com/ccyl13/Proxmark3/blob/main/tarjeta%20CUID.jpeg?raw=true)
 ![RFID](https://github.com/ccyl13/Proxmark3/blob/main/RFID.jpeg?raw=true)
 
+## 10. 🎁 Bonus: Scripts Útiles para Proxmark3
+
+Los siguientes scripts pueden ayudarte a automatizar ciertas tareas y mejorar el uso de la **Proxmark3**.
+
+### 🔹 1. Script para detectar tarjetas automáticamente
+
+Este script ejecuta automáticamente la detección del tipo de tarjeta insertada y muestra comandos útiles.
+
+📌 **Uso:**
+```sh
+pm3 --> script auto_detect
+```
+
+📌 **Función:**
+- Detecta si la tarjeta es **LF** (baja frecuencia) o **HF** (alta frecuencia).
+- Sugiere comandos de lectura, análisis y clonación.
+
+---
+
+### 🔹 2. Script para ataque a Mifare 1K (`autopwn` mejorado)
+
+Este script automatiza el ataque a una tarjeta **Mifare 1K** probando varias estrategias para extraer claves.
+
+📌 **Uso:**
+```sh
+pm3 --> script hf_mf_attack
+```
+
+📌 **Función:**
+- Ejecuta `hf mf autopwn` con ajustes óptimos.
+- Guarda automáticamente las claves encontradas en un archivo de sesión.
+
+---
+
+### 🔹 3. Script para clonar una tarjeta a otra (`clone_card`)
+
+📌 **Uso:**
+```sh
+pm3 --> script clone_card -f dump.mfd
+```
+
+📌 **Función:**
+- Carga un **archivo dump** de una tarjeta previamente leída.
+- Escribe los datos en una nueva tarjeta en blanco.
+
+---
+
+### 🔹 4. Script para analizar sectores de una tarjeta (`sector_scan`)
+
+Este script permite inspeccionar los sectores de una tarjeta en busca de **datos sensibles**.
+
+📌 **Uso:**
+```sh
+pm3 --> script sector_scan
+```
+
+📌 **Función:**
+- Escanea todos los sectores de la tarjeta.
+- Muestra información útil como el tipo de cifrado y posibles vulnerabilidades.
+
+---
+
+### 🔹 5. Script para extraer claves de varias tarjetas (`batch_key_extractor`)
+
+Si tienes muchas tarjetas para analizar, este script automatiza la extracción de claves de múltiples tarjetas.
+
+📌 **Uso:**
+```sh
+pm3 --> script batch_key_extractor
+```
+
+📌 **Función:**
+- Extrae claves **de varias tarjetas sin intervención manual**.
+- Guarda los resultados en un **archivo de texto JSON**.
+
+---
+
+## 🚀 Conclusión del Bonus
+
+Estos **scripts** facilitan el uso de **Proxmark3** al automatizar procesos repetitivos. Puedes crearlos manualmente o buscarlos en la comunidad de **GitHub**.
+
+Si deseas crear un script personalizado, puedes guardarlo en el directorio:
+```sh
+proxmark3/client/scripts/
+```
+Y ejecutarlo con:
+```sh
+script nombre_del_script
+```
+
+¡Espero que este bonus te ayude a sacarle el máximo provecho a tu **Proxmark3**! 🎯
+
+---
+
+Para más información sobre scripting, revisa:
+- 📌 [Documentación de scripts para Proxmark3](https://github.com/RfidResearchGroup/proxmark3/wiki/Scripting)
