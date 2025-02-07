@@ -71,9 +71,9 @@ Antes de comenzar, asegúrate de tener lo siguiente:
      - **Comentar** `PLATFORM=PM3RDV4`
      - **Descomentar** `PLATFORM=PM3GENERIC`
 
-![Antes del cambio de plataforma](https://github.com/ccyl13/Proxmark3/blob/main/1.png?raw=true)
+![Antes del cambio de plataforma](https://github.com/ccyl13/Proxmark3/blob/main/3.png?raw=true)
 
-![Después del cambio de plataforma](https://github.com/ccyl13/Proxmark3/blob/main/2.png?raw=true)
+![Después del cambio de plataforma](https://github.com/ccyl13/Proxmark3/blob/main/4.png?raw=true)
 
 5. Compila el firmware:
    ```sh
